@@ -1,139 +1,184 @@
 <html>
 <head>
     <title>LearnHub</title>
+
+    <script>
+        function setTheme(theme) {
+
+            let body = document.body;
+            let header = document.getElementById("header");
+            let footer = document.getElementById("footer");
+
+            if (theme === 'blue') {
+                body.style.backgroundColor = "#eef5ff";
+                body.style.color = "black";
+                header.style.backgroundColor = "#4a69bd";
+                footer.style.backgroundColor = "#4a69bd";
+            }
+
+            else if (theme === 'green') {
+                body.style.backgroundColor = "#e8f8f5";
+                body.style.color = "black";
+                header.style.backgroundColor = "#27ae60";
+                footer.style.backgroundColor = "#27ae60";
+            }
+
+            else if (theme === 'purple') {
+                body.style.backgroundColor = "#f3e8ff";
+                body.style.color = "black";
+                header.style.backgroundColor = "#8e44ad";
+                footer.style.backgroundColor = "#8e44ad";
+            }
+
+            else if (theme === 'orange') {
+                body.style.backgroundColor = "#fff4e6";
+                body.style.color = "black";
+                header.style.backgroundColor = "#e67e22";
+                footer.style.backgroundColor = "#e67e22";
+            }
+
+            else if (theme === 'red') {
+                body.style.backgroundColor = "#ffeaea";
+                body.style.color = "black";
+                header.style.backgroundColor = "#c0392b";
+                footer.style.backgroundColor = "#c0392b";
+            }
+
+            else if (theme === 'teal') {
+                body.style.backgroundColor = "#e0f7f7";
+                body.style.color = "black";
+                header.style.backgroundColor = "#16a085";
+                footer.style.backgroundColor = "#16a085";
+            }
+
+            else if (theme === 'pink') {
+                body.style.backgroundColor = "#ffe6f0";
+                body.style.color = "black";
+                header.style.backgroundColor = "#ff4d88";
+                footer.style.backgroundColor = "#ff4d88";
+            }
+
+            else if (theme === 'dark') {
+                body.style.backgroundColor = "#2c3e50";
+                body.style.color = "white";
+                header.style.backgroundColor = "#000000";
+                footer.style.backgroundColor = "#000000";
+            }
+        }
+    </script>
+
 </head>
 
 <body bgcolor="#eef5ff">
 
     <!-- Header -->
-    <table width="100%" bgcolor="#4a69bd" cellpadding="12">
+    <table id="header" width="100%" bgcolor="#4a69bd" cellpadding="12">
         <tr>
             <td align="center">
-                <font size="7" color="white"> LearnHub</font>
+                <font size="7" color="white">📚 LearnHub</font>
             </td>
         </tr>
     </table>
 
+    <!-- Theme Buttons -->
+    <p align="center">
+        <b>Choose Theme:</b><br><br>
+        <button onclick="setTheme('blue')">Blue</button>
+        <button onclick="setTheme('green')">Green</button>
+        <button onclick="setTheme('purple')">Purple</button>
+        <button onclick="setTheme('orange')">Orange</button>
+        <button onclick="setTheme('red')">Red</button>
+        <button onclick="setTheme('teal')">Teal</button>
+        <button onclick="setTheme('pink')">Pink</button>
+        <button onclick="setTheme('dark')">Dark</button>
+    </p>
+
+    <hr>
+
     <!-- Navigation -->
     <p align="center">
-        <font size="4" color="#2f3640">
-            Home | Courses | Trainers | Contact
-        </font>
+        Home | Courses | Trainers | Contact
     </p>
 
-    <hr color="#4a69bd">
+    <hr>
 
     <!-- Welcome -->
-    <h2 align="center">
-        <font color="#273c75">Upgrade Your Skills</font>
-    </h2>
+    <h2 align="center">Upgrade Your Skills</h2>
+    <p align="center">Learn modern technologies with structured courses 🚀</p>
 
-    <p align="center">
-        Learn modern technologies with structured and easy courses
-    </p>
+    <hr>
 
-    <hr color="#4a69bd">
-
-    <!-- Courses Section -->
-    <h2>
-        <font color="#273c75">Popular Courses</font>
-    </h2>
+    <!-- Courses -->
+    <h2>Popular Courses</h2>
 
     <table border="1" width="100%" cellpadding="12">
-        <tr bgcolor="#c7d2fe">
+        <tr>
             <th>Course</th>
             <th>Duration</th>
             <th>Price</th>
         </tr>
 
-        <tr bgcolor="#f1f5ff">
+        <tr>
             <td>Java Full Stack</td>
             <td>3 Months</td>
             <td>Rs 4999</td>
         </tr>
 
-        <tr bgcolor="#e6edff">
+        <tr>
             <td>Web Development</td>
             <td>2 Months</td>
             <td>Rs 3999</td>
         </tr>
 
-        <tr bgcolor="#f1f5ff">
+        <tr>
             <td>Data Structures</td>
             <td>1.5 Months</td>
             <td>Rs 2999</td>
         </tr>
     </table>
 
-    <hr color="#4a69bd">
+    <hr>
 
-    <!-- Trainers Section -->
-    <h2>
-        <font color="#273c75">Our Trainers</font>
-    </h2>
+    <!-- Trainers -->
+    <h2>Our Trainers</h2>
 
     <table width="100%" cellpadding="15">
         <tr align="center">
 
-            <td bgcolor="#ffffff">
+            <td>
                 <h3>Rahul Sharma</h3>
                 <p>Java Expert</p>
-                <p>5+ Years Experience</p>
             </td>
 
-            <td bgcolor="#dde6ff">
+            <td>
                 <h3>Neha Verma</h3>
                 <p>Frontend Developer</p>
-                <p>4+ Years Experience</p>
             </td>
 
-            <td bgcolor="#ffffff">
+            <td>
                 <h3>Amit Patel</h3>
                 <p>DSA Specialist</p>
-                <p>6+ Years Experience</p>
             </td>
 
         </tr>
     </table>
 
-    <hr color="#4a69bd">
+    <hr>
 
-    <!-- Discount Section -->
-    <table width="100%" bgcolor="#ffd6d6" cellpadding="12">
-        <tr>
-            <td align="center">
-                <font size="5" color="#c0392b"> Special Offer</font><br>
-                <font size="4">Get 25% OFF on all courses this month</font>
-            </td>
-        </tr>
-    </table>
+    <!-- Offer -->
+    <h3 align="center">🎯 Get 25% OFF on all courses</h3>
 
-    <hr color="#4a69bd">
-
-    <!-- About -->
-    <h2>
-        <font color="#273c75">About Us</font>
-    </h2>
-
-    <p>
-        LearnHub provides high-quality online courses designed by industry experts
-        to help students and professionals grow their careers.
-    </p>
-
-    <hr color="#4a69bd">
+    <hr>
 
     <!-- Contact -->
-    <h2>
-        <font color="#273c75">Contact Us</font>
-    </h2>
-
+    <h2>Contact</h2>
     <p>Email: learnhub@gmail.com</p>
     <p>Phone: 9876543210</p>
 
-    <hr color="#4a69bd">
+    <hr>
 
     <!-- Footer -->
-    <table width="100%" bgcolor="#4a69bd" cellpadding="8">
+    <table id="footer" width="100%" bgcolor="#4a69bd" cellpadding="8">
         <tr>
             <td align="center">
                 <font color="white">Thank You</font>
