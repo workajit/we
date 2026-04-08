@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Someone Special ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4);
+        background-size: 400% 400%;
+        animation: bg 10s ease infinite;
+    }
+
+    @keyframes bg {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .box {
+        text-align: center;
+        padding: 40px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.2);
+        backdrop-filter: blur(10px);
+        color: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #text {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        min-height: 50px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        background: white;
+        color: #ff4d88;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #ffe6f0;
+    }
+</style>
+
+<script>
+    let msg = "I was just testing HTML... but then I thought of you ❤️";
+    let i = 0;
+
+    function typeEffect() {
+        if (i < msg.length) {
+            document.getElementById("text").innerHTML += msg.charAt(i);
+            i++;
+            setTimeout(typeEffect, 50);
+        }
+    }
+
+    function showLove() {
+        document.getElementById("text").innerHTML =
+        "Okay fine… truth is 😌<br><br>I made this just to say...<br><br><b>I love you ❤️</b><br><br>Now you can smile 😊";
+    }
+
+    window.onload = typeEffect;
+</script>
+
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Hey You 💖</h1>
+
+    <div id="text"></div>
+
+    <button onclick="showLove()">Click Me 🙈</button>
+</div>
+
+</body>
+</html>
