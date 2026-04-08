@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Someone Special ❤️</title>
+<title>Just One Question 💖</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
     body {
         margin: 0;
         height: 100vh;
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,53 +33,75 @@
         backdrop-filter: blur(10px);
         color: white;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        width: 300px;
+        width: 320px;
+        position: relative;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    #text {
-        margin-top: 20px;
-        font-size: 1.2rem;
-        min-height: 50px;
+    #msg {
+        margin-top: 15px;
+        min-height: 60px;
+        font-size: 1.1rem;
     }
 
     button {
-        margin-top: 20px;
         padding: 10px 20px;
         border: none;
         border-radius: 10px;
-        background: white;
-        color: #ff4d88;
         cursor: pointer;
         font-weight: bold;
     }
 
-    button:hover {
-        background: #ffe6f0;
+    #yes {
+        background: white;
+        color: #ff4d88;
+        margin-right: 10px;
     }
+
+    #no {
+        background: #ff4d88;
+        color: white;
+        position: absolute;
+    }
+
+    #final {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        display: none;
+    }
+
 </style>
 
 <script>
-    let msg = "I was just testing HTML... but then I thought of you ❤️";
+    let text = "I wanted to ask you something... 💭";
     let i = 0;
 
-    function typeEffect() {
-        if (i < msg.length) {
-            document.getElementById("text").innerHTML += msg.charAt(i);
+    function typing() {
+        if (i < text.length) {
+            document.getElementById("msg").innerHTML += text.charAt(i);
             i++;
-            setTimeout(typeEffect, 50);
+            setTimeout(typing, 50);
         }
     }
 
-    function showLove() {
-        document.getElementById("text").innerHTML =
-        "Okay fine… truth is 😌<br><br>I made this just to say...<br><br><b>I love you ❤️</b><br><br>Now you can smile 😊";
+    function moveNo() {
+        let btn = document.getElementById("no");
+        let x = Math.random() * 250;
+        let y = Math.random() * 200;
+        btn.style.left = x + "px";
+        btn.style.top = y + "px";
     }
 
-    window.onload = typeEffect;
+    function sayYes() {
+        document.getElementById("msg").innerHTML = "";
+        document.getElementById("question").style.display = "none";
+        document.getElementById("final").style.display = "block";
+    }
+
+    window.onload = typing;
 </script>
 
 </head>
@@ -86,11 +109,26 @@
 <body>
 
 <div class="box">
-    <h1>Hey You 💖</h1>
 
-    <div id="text"></div>
+    <h1>Hey You 😊</h1>
 
-    <button onclick="showLove()">Click Me 🙈</button>
+    <div id="msg"></div>
+
+    <div id="question" style="margin-top:20px;">
+        <p>Do you like me? 😏</p>
+
+        <button id="yes" onclick="sayYes()">Yes 💖</button>
+        <button id="no" onmouseover="moveNo()">No 🙈</button>
+    </div>
+
+    <div id="final">
+        <b>Hehe I knew it 😌❤️</b><br><br>
+        Not gonna lie…<br>
+        I made this just for you 💕<br><br>
+        <b>I really really like you ❤️</b><br><br>
+        Now don’t stop smiling 😊
+    </div>
+
 </div>
 
 </body>
